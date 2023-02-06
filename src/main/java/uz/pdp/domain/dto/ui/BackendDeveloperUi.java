@@ -1,4 +1,7 @@
 package uz.pdp.domain.dto.ui;
 
-public class BackendDeveloper {
+public class BackendDeveloperUi {
+    public static void backendDevUi(){
+
+    }
 }

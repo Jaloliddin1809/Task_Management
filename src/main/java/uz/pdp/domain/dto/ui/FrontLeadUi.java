@@ -1,4 +1,7 @@
 package uz.pdp.domain.dto.ui;
 
-public class FeLeadUi {
+public class FrontLeadUi {
+    public static void frontLead(){
+
+    }
 }

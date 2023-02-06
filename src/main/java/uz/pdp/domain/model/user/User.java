@@ -24,6 +24,7 @@ public class User extends BaseModel {
     private String lastname;
     @JsonFormat(pattern = "[a-zA-Z]\\w+@[a-zA-Z]+\\.com")
     private String email;
+    @JsonFormat(pattern = "[a-zA-Z]\\w")
     private String password;
     private UserRole role;
 }

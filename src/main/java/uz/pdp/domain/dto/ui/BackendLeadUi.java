@@ -1,4 +1,7 @@
 package uz.pdp.domain.dto.ui;
 
-public class BeLeadUi {
+public class BackendLeadUi {
+    public static void backLead(){
+
+    }
 }

@@ -1,4 +1,7 @@
 package uz.pdp.domain.dto.ui;
 
-public class FrontEndDeveloper {
+public class FrontendDeveloperUi {
+    public static void frontDevUi(){
+
+    }
 }
