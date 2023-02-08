@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Response {
+public class UserResponse {
     private UUID userId;
     private int status;
     private String message;
