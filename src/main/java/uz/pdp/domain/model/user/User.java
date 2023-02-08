@@ -27,4 +27,15 @@ public class User extends BaseModel {
     @JsonFormat(pattern = "[a-zA-Z]\\w")
     private String password;
     private UserRole role;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }

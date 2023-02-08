@@ -4,8 +4,8 @@ import uz.pdp.domain.dto.response.UserResponse;
 
 import java.util.UUID;
 
-public interface BaseService<T> {
-    UserResponse SignUp(T t);
+public interface BaseService<T,R> {
+    R add(T t);
 
     T getById(UUID id);
 }

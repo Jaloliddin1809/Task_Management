@@ -1,9 +1,6 @@
 package uz.pdp.domain.dto.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.UUID;
@@ -16,4 +13,11 @@ public class UserResponse {
     private UUID userId;
     private int status;
     private String message;
+    @Override
+    public String toString() {
+        return "UserResponse{" +
+                "status=" + status +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }
