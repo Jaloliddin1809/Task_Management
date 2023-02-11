@@ -21,7 +21,7 @@ public interface TaskRepository{
             throw new RuntimeException(e);
         }
     }
-    default void writeToFile(ArrayList<Task> taskList){
+    default void writeToFileTasks(ArrayList<Task> taskList){
         try {
             objectMapper.writeValue(file,taskList);
         }catch(IOException e){

@@ -13,6 +13,6 @@ public class Manager extends BaseModel {
     final String name="Manager";
     final String lastName="Manager";
     final String email="Manager1234.gmail.com";
-    final String password="12345";
+    final String password="12345qwerty";
     final UserRole role=UserRole.MANAGER;
 }

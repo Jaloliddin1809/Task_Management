@@ -6,6 +6,7 @@ import uz.pdp.domain.model.user.UserRole;
 import uz.pdp.repository.UserRepository;
 import uz.pdp.service.validator.UserValidator;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -94,30 +95,32 @@ public class UserServiceImpl implements UserService, UserRepository {
                 status=320;
                 message="User role o'zgartirildi";
                 user.setRole(userRole);
+                user.setUpdateDate(LocalDateTime.now());
             }
         }
         userResponse.setMessage(message);
         userResponse.setStatus(status);
+        writeToFile(userList);
         return userResponse;
     }
-    public UserResponse remove(String userEmail){
-        ArrayList<User> userList=getUserList();
+    public UserResponse delete(String userEmail){
         UserResponse userResponse=new UserResponse();
+        ArrayList<User> userList=getUserList();
         int status=450;
-        String message="Bunday emailli user yoq";
-        for (User user : userList) {
+        String message="Bunday emailli user yo'q";
+        for (User user : getUsers()) {
             if (user.getEmail().equals(userEmail)){
-                userList.remove(user);
+                getUserList().remove(user);
                 status=330;
                 message="User o'chirildi";
             }
         }
         userResponse.setStatus(status);
         userResponse.setMessage(message);
-        writeToFile(userList);
+        writeToFile(getUserList());
         return userResponse;
     }
-    public ArrayList<User> seeUserRole(UserRole userRole){
+    public ArrayList<User> getUsersByRole(UserRole userRole){
         ArrayList<User> userList=getUserList();
         ArrayList<User> getUsers=new ArrayList<>();
         for (User user:userList){
@@ -126,5 +129,8 @@ public class UserServiceImpl implements UserService, UserRepository {
             }
         }
         return getUsers;
+    }
+    public ArrayList<User> getUsers(){
+        return getUserList();
     }
 }
