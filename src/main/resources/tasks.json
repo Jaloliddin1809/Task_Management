@@ -1,11 +1,1 @@
-[ {
-  "id" : "95e906ef-62e7-4cea-8523-c78a9a3e6532",
-  "name" : "Task1",
-  "description" : "Task",
-  "assigneeId" : "69c16973-74ac-4d39-8172-85bfc3fbbf83",
-  "userId" : "69c16973-74ac-4d39-8172-85bfc3fbbf83",
-  "type" : "SM_TASK",
-  "status" : "ASSIGNED",
-  "created_Date" : "10.02.2023 18:41:00",
-  "update_Date" : "10.02.2023 18:41:00"
-} ]
+[]

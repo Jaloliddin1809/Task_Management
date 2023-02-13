@@ -73,6 +73,20 @@ public class TaskServiceImpl implements TaskService, TaskRepository {
         writeToFileTasks(taskList);
         return new TaskResponse().setMessage(message).setStatus(status);
     }
+    public TaskResponse delete(Task task){
+        ArrayList<Task> taskList=getTaskList();
+        int status=430;
+        String message="Qaytadan urinib ko'ring";
+        for (Task task1 : taskList) {
+            if (task.equals(task1)){
+                taskList.remove(task);
+                status=230;
+                message="Task o'chirildi";
+            }
+        }
+        writeToFileTasks(taskList);
+        return new TaskResponse().setStatus(status).setMessage(message);
+    }
     @Override
     public Task getById(UUID id) {
         for (Task task : getTaskList()) {

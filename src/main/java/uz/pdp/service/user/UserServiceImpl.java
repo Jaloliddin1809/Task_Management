@@ -1,6 +1,7 @@
 package uz.pdp.service.user;
 
 import uz.pdp.domain.dto.response.UserResponse;
+import uz.pdp.domain.model.task.Task;
 import uz.pdp.domain.model.user.User;
 import uz.pdp.domain.model.user.UserRole;
 import uz.pdp.repository.UserRepository;
@@ -104,7 +105,6 @@ public class UserServiceImpl implements UserService, UserRepository {
         return userResponse;
     }
     public UserResponse delete(String userEmail){
-        UserResponse userResponse=new UserResponse();
         ArrayList<User> userList=getUserList();
         int status=450;
         String message="Bunday emailli user yo'q";
@@ -115,10 +115,8 @@ public class UserServiceImpl implements UserService, UserRepository {
                 message="User o'chirildi";
             }
         }
-        userResponse.setStatus(status);
-        userResponse.setMessage(message);
         writeToFile(getUserList());
-        return userResponse;
+        return new UserResponse().setStatus(status).setMessage(message);
     }
     public ArrayList<User> getUsersByRole(UserRole userRole){
         ArrayList<User> userList=getUserList();
